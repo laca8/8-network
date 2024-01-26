@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 
 __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
-const NODE_ENV = "production";
+const NODE_ENV = "dev";
 if (NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
   app.get("*", (req, res) =>
